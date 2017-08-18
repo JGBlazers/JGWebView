@@ -37,6 +37,16 @@ typedef void(^JGLoadingViewBlock)(id<JGLoadingView>loadingView);
  */
 - (UIView *)getWebView;
 
+/**
+ *  设置代理，设置了之后代理方法就会调用，不设置代理的情况下，也不会加载代理方法
+ */
+- (void)setDelegate:(id<JGWebViewDelegate>)delegate;
+
+/**
+ *  此代理是为了WKWebView拓展的，如果不需要或者是使用UIWebView时，可以不调用次方法
+ */
+- (void)setUIDelegate:(id<JGWebViewUIDelegate>)ui_delegate;
+
 #pragma - mark      ---------- 工具栏相关 ----------
 
 /**
@@ -47,7 +57,7 @@ typedef void(^JGLoadingViewBlock)(id<JGLoadingView>loadingView);
 - (void)isNeedToolBar:(BOOL)isNeed;
 
 /**
- *  设置工具条的高度  默认50
+ *  设置工具条的高度  默认60
  *
  *  @param height 高度
  */
@@ -59,16 +69,6 @@ typedef void(^JGLoadingViewBlock)(id<JGLoadingView>loadingView);
  *  @param toolBar 自定义的工具条
  */
 - (void)setCustomToolBar:(UIView *)toolBar;
-
-/**
- *  设置代理
- */
-- (void)setDelegate:(id<JGWebViewDelegate>)delegate;
-
-/**
- *  此代理是为了WKWebView拓展的，如果不需要或者是使用UIWebView时，可以不调用次方法
- */
-- (void)setUIDelegate:(id<JGWebViewUIDelegate>)ui_delegate;
 
 #pragma - mark      ---------- WebView的加载链接 ----------
 
