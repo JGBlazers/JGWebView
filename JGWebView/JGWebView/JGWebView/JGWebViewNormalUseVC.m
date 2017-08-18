@@ -34,13 +34,13 @@
     id <JGWebViewFactory> factory = [engine getWebViewFactory];
     // 拿到webView虚拟对象
     id <JGWebView> webView = [factory getWebViewWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];
+    // webView的基本配置
+    [webView setDelegate:self];
     // 通过webView的虚拟对象，将webView添加到self.view上
     [self.view addSubview:[webView getView]];
     
-    // webView的基本配置
-    [webView setDelegate:self];
-    
-    [webView loadURLString:@"http://www.qisuu.com"];
+    // 加载
+    [webView loadURLString:@"https://www.baidu.com"];
 }
 
 #pragma - mark      ---------- JGWebViewDelegate ----------
