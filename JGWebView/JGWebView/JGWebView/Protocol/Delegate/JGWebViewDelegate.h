@@ -12,7 +12,7 @@
 
 @protocol JGWebView;
 @protocol JGWebViewDelegate <NSObject>
-
+@optional
 /**
  *  将要开始加载
  *

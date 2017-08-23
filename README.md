@@ -11,6 +11,11 @@
 * **设计模式** ：以虚拟工厂模式作为基础框架进行设计，达到解耦、一键切换的效果、
 * **cookie同步** : 在JGWebView中，根据webView的cookie机制，做了cookie的简单配置
 
+#### JGWebView 的集成
+* **CocoaPods方式集成 (推荐使用此方式)** : 在pod创建时的Podfile文件中，添加上pod 'JGWebView'，然后在终端切换到项目根目录下，执行命令**pod update**，接着执行**pod install**即可
+*  **手动集成**: 打开地址https://github.com/fcgIsPioneer/JGWebView.git，下载或者克隆下来之后，将JGWebView这个包含着(JGLoadingViewLib、JGWebView、JGWebViewCongroller)的文件夹，拖到项目中即可
+
+[TOC]
 #### JGWebView的基本使用
 ##### ☆ 使用方式一：如果在当场使用的情况下，可以直接按照下面的方式进行创建
 ```objectivec

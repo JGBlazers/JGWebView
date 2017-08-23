@@ -11,7 +11,7 @@
 /********** ********** 此代理专门为了拓展wkWebView做准备的 ********** **********/
 @protocol JGWebView;
 @protocol JGWebViewUIDelegate <NSObject>
-
+@optional
 /**
  *  webView关闭
  *
