@@ -34,6 +34,13 @@ typedef enum {
 + (id)shareWebViewEngineWithType:(JGWebViewType)type;
 
 /**
+ *  修改浏览器的所属    注意-> 如果想要注册自己的agent，要在Appdelegate(入口类)中调用这个方法，然后将自己的agent传进来
+ *
+ *  @param agent 所属放标记
+ */
++ (void)initWebViewUserAgent:(NSString *)agent;
+
+/**
  *  获取webView
  */
 - (id<JGWebViewFactory>)getWebViewFactory;

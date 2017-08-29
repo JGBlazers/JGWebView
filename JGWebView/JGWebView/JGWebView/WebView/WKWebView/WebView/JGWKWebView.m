@@ -120,6 +120,12 @@
         [self addSubview:webView];
         self.webView = webView;
         
+        
+        [webView evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id result, NSError *error) {
+            NSString *userAgent = result;
+            NSLog(@"navigator.userAgent == %@", userAgent);
+        }];
+        
         // 创建工具条
         [self createToolBar];
     }

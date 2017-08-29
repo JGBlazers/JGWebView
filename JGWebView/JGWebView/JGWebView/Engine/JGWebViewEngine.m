@@ -64,6 +64,31 @@ static JGWebViewEngine *_instance = nil;
     _instance.type = type;
     return _instance;
 }
+
+/**
+ *  修改浏览器的所属    注意-> 如果想要注册自己的agent，要在Appdelegate(入口类)中调用这个方法，然后将自己的agent传进来
+ *
+ *  @param agent 所属放标记
+ */
++ (void)initWebViewUserAgent:(NSString *)agent {
+    
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectZero];
+    NSString *oldAgent = [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+    //NSLog(@"old agent :%@", oldAgent);
+    
+    //添加自己的agent
+    NSString *newAgent = oldAgent;
+    if (![newAgent containsString:agent]) {
+        newAgent = [newAgent stringByAppendingPathComponent:agent];
+        //NSLog(@"new agent :%@", newAgent);
+    }
+    
+    //将agent注册
+    NSDictionary *dictionnary = [[NSDictionary alloc] initWithObjectsAndKeys:newAgent, @"UserAgent", nil];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:dictionnary];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:dictionnary];
+}
+
 /**
  *  获取webView
  */

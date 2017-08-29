@@ -116,6 +116,10 @@
         self.webView = webView;
         [self addSubview:webView];
         
+        
+        NSString *oldAgent = [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+        NSLog(@"navigator.userAgent == %@", oldAgent);
+        
         // 创建工具条
         [self createToolBar];
     }

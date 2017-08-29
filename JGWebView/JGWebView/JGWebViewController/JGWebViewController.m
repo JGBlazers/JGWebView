@@ -75,7 +75,7 @@
  */
 - (void)createWebView {
     // 初始化引擎
-    JGWebViewEngine *engine = [JGWebViewEngine shareWebViewEngineWithType:JGWebViewTypeForUIWebView];
+    JGWebViewEngine *engine = [JGWebViewEngine shareWebViewEngineWithType:_type];
     // 获取webView的工厂
     id <JGWebViewFactory> factory = [engine getWebViewFactory];
     // 拿到webView虚拟对象
