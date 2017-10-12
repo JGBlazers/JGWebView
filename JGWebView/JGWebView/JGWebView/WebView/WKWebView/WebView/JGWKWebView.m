@@ -558,8 +558,6 @@
         //允许跳转
         decisionHandler(WKNavigationActionPolicyAllow);
     }
-    //允许跳转
-    decisionHandler(WKNavigationActionPolicyAllow);
 }
 
 // 加载中
